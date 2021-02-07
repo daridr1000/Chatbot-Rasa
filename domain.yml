@@ -1,0 +1,196 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- past_problems
+- hobbies
+- live
+- weight_change
+- medical_conditions
+- urinate
+- injury_story
+- blood_toilet
+- breathing
+- introduction
+- recent_state
+- name_birth
+- current_medication
+- sleeping
+- bowel_bladder
+- cough
+- eating_problems
+- family_conditions
+- operations
+- pain_scale
+- pets
+- smoke
+- blood_mucus
+- daily_life
+- injury_context
+- heartburn
+- chest_pains
+- travel
+- legs
+- concerns
+- diarrhoea
+- work
+- pain_assessment
+- pain_worse
+- allergies
+- ankle
+- pain_medication
+- pain_better
+- pain_location
+- pain_description
+entities:
+- allergy
+- blood
+- breathe
+- change
+- chest pains
+- concerns
+- cough
+- current
+- date
+- day
+- eat
+- greeting
+- hobbies
+- hobby
+- life
+- medical history
+- medication
+- mucus
+- name
+- other symptoms
+- pain
+- pain_better
+- pain_worse
+- pets
+- recent
+- toilet
+- travel
+- weight
+- work
+responses:
+  utter_goodbye:
+  - text: Bye!
+  utter_affirm:
+  - text: Yes!
+  utter_context:
+  - text: My back hurts.
+  utter_name:
+  - text: My name is William MacKay and I am 62.
+  utter_injury_story:
+  - text: The back pain came on suddenly after I lifted a heavy bag of bark for my garden, out of the car boot 4 days ago. I dropped the bag of bark on the ground and had to go inside to ask my son to come and help me. I did not fall during this incident.
+  utter_pain_location:
+  - text: The pain is in left lower back region.
+  utter_pain_description:
+  - text: I have had occasional shooting with severe pain going down the back of my left leg. This happens more if I am sitting down.
+  utter_pain_assessment:
+  - text: It’s a constant pain all the time but occasionally gets worse. I would say it is worse in the morning but usually improves within 20 minutes after getting out of bed.
+  utter_pain_medication:
+  - text: Nurofen and Paracetamol tablets helped initially but not so much now
+  utter_pain_better:
+  - text: The leg pain eases if I am lying flat on my back or when I am standing.
+  utter_pain_worse:
+  - text: Sitting down too long, bending down, or lifting anything
+  utter_pain_scale:
+  - text: I would say that the pain severity is 6/10, going up to 8/10 when bad.
+  utter_legs:
+  - text: I have not noticed any leg weakness but over the last week I have had some pins and needles affecting the outer border of my left foot. I only have this left leg pain when I am sitting down
+  utter_urinate:
+  - text: I do not have any urinary problems.
+  utter_bowel_bladder:
+  - text: I did not notice any change, I have a normal bowel movement once a day.
+  utter_sleeping:
+  - text: My partner made an appointment with the GP because the pain has been affecting my sleep and I have been off work since it happened.
+  utter_daily_life:
+  - text: My partner and son have been helping me around the house.
+  utter_blood_mucus:
+  - text: I do not cough any mucus up and have not coughed any blood up.
+  utter_cough:
+  - text: I have had a cough, but it is no worse than usual and I think it is because of my smoking
+  utter_chest_pains:
+  - text: I have not have any chest pains or palpitations.
+  utter_breathing:
+  - text: I have not have any wheeze or noticed any breathlessness when lying flat. However, I do get breathless if I am walking upstairs or up an incline, but this has been the same for years.
+  utter_ankle:
+  - text: I have not noticed any ankle swelling.
+  utter_eating_problems:
+  - text: I have been eating and drinking as normal. I am swallowing normally.
+  utter_weight_change:
+  - text: My weight has not changed for years
+  utter_blood_toilet:
+  - text: I have not noticed blood from my back passage.
+  utter_heartburn:
+  - text: I have had some heartburn (acid burning feeling) after taking the Nurofen
+  utter_diarrhoea:
+  - text: I have not noticed any black diarrhoea.
+  utter_past_problems:
+  - text: I had an episode of back pain 5 years ago after a car accident and this cleared up with time and physio. I did not have any leg pain during that episode.
+  utter_operations:
+  - text: I had my gallbladder removed 10 years ago for gallstones. No problems with the anaesthetic.
+  utter_medical_conditions:
+  - text: I had high blood pressure diagnosed 10 years ago when I had my gallbladder problems. I see the nurse once a year for a check-up including blood tests.
+  utter_allergies:
+  - text: I do not have any allergies
+  utter_current_medication:
+  - text: Ramipril 1 tablet once daily for my high blood pressure. I also took Nurofen 1 tablet 3 times daily for the last 3 weeks. I bought this over the counter. Paracetamol (2 tablets/ 3 times daily) helps my back but not the leg pain.
+  utter_live:
+  - text: I live in Balmedie with my partner and son. The house is a 2-storey semidetached house which has stairs
+  utter_work:
+  - text: I am a self-employed cleaner, I work 7 days a week. My work involves cleaning machines and lots of bending down.
+  utter_smoke:
+  - text: I smoke 20 cigarettes per day since I was 15 years. I tried to stop 10 years ago when I was informed I had high blood pressure but nothing worked. I do not want to try anymore. I do not drink alcohol or take any recreational drugs.
+  utter_family_conditions:
+  - text: My mother died 10 years ago of a stroke at the age of 75. My father is 88 years old and is currently living in a nursing home. I do not have no siblings. I have a 35year old son, John, who lives with me. My partner has 2 adult daughters, Mary and Jean who live near Inverness.
+  utter_hobbies:
+  - text: I work many hours so I don’t have time for leisure or activities.
+  utter_pets:
+  - text: No, I do not have any pets.
+  utter_travel:
+  - text: No, I do not have time with my job.
+  utter_concerns:
+  - text: I am really worried that I can't work because of the pain, and if I don't work I won't get paid. I already used all my savings so I really can't afford to miss work.
+  - text: I am desperate to get rid of the pain and think some tests will find out what is wrong. I hope I can get an X-ray and some stronger pain killers.
+actions:
+- utter_affirm
+- utter_allergies
+- utter_ankle
+- utter_blood_mucus
+- utter_blood_toilet
+- utter_bowel_bladder
+- utter_breathing
+- utter_chest_pains
+- utter_concerns
+- utter_context
+- utter_cough
+- utter_current_medication
+- utter_daily_life
+- utter_diarrhoea
+- utter_eating_problems
+- utter_family_conditions
+- utter_heartburn
+- utter_hobbies
+- utter_injury_story
+- utter_introduction
+- utter_legs
+- utter_live
+- utter_medical_conditions
+- utter_name
+- utter_operations
+- utter_pain_assessment
+- utter_pain_better
+- utter_pain_medication
+- utter_pain_scale
+- utter_pain_worse
+- utter_past_problems
+- utter_pets
+- utter_sleeping
+- utter_smoke
+- utter_travel
+- utter_urinate
+- utter_weight_change
+- utter_work
