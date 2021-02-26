@@ -41,9 +41,14 @@ nlu:
   examples: |
     - Is it a constant pain or is it getting worse?
     - Have you found anything that makes the pain better or worse?
-- intent: pain_medication # problem
+- intent: current_medication
   examples: |
     - Are you taking any painkillers to help the pain?
+    - Do you take any regular medications?
+    - Do you take any medicine right now?
+    - Do you take any medicine right now?[]{"entity": "medication", "value": "medicine"}[]{"entity": "current", "value": "now"}
+- intent: pain_medication
+  examples: |
     - Does your medication help with the pain?
 - intent: pain_better
   examples: |
@@ -84,11 +89,11 @@ nlu:
   examples: |
     - Is the pain affecting your daily life?
     - Is your daily life being affected by the pain?[]{"entity": "day", "value": "daily"}[]{"entity": "life", "value": "life"}[]{"entity": "pain", "value": "pain"}
-- intent: blood_mucus # problem
+- intent: blood_mucus
   examples: |
     - Did you cough any blood or mucus?
     - Did you cough any blood or mucus?[]{"entity": "blood", "value": "blood"}[]{"entity": "mucus", "value": "mucus"}
-- intent: recent_state # problem
+- intent: recent_state
   examples: |
     - Have you been well recently? any coughs, fevers, abdominal pain, headaches, any other symptoms you can't explain along with this?
     - Have you been well recently?[]{"entity": "recent", "value": "recently"}
@@ -100,10 +105,9 @@ nlu:
   examples: |
     - Do you have any chest pains?
     - Do you have any chest pains?[]{"entity": "chest pains", "value": "chest pains"}
-- intent: breathing # problem
+- intent: breathing
   examples: |
     - Do you have any problems breathing?
-    - Do you have any problems breathing?[]{"entity": "breathe", "value": "breathing"}
     - Do you have any problems breathing?[]{"entity": "breathe", "value": "breathing"}
 - intent: ankle
   examples: |
@@ -116,7 +120,7 @@ nlu:
   examples: |
     - Did you see any change in your weight?
     - Did you see any change in your weight?[]{"entity": "change", "value": "change"}[]{"entity": "weight", "value": "weight"}
-- intent: blood_toilet # problem
+- intent: blood_toilet
   examples: |
     - Did you notice blood when going to the toilet?
     - Did you notice blood when going to the toilet?[]{"entity": "blood", "value": "blood"}[]{"entity": "toilet", "value": "toilet"}
@@ -124,7 +128,7 @@ nlu:
   examples: |
     - Did you experience any heartburn?
     - Did you experience any heartburn?[]{"entity": "other symptoms", "value": "heartburn"}
-- intent: diarrhoea # problem
+- intent: diarrhoea
   examples: |
     - Did you experience any diarrhoea?
 - intent: past_problems
@@ -149,11 +153,6 @@ nlu:
   examples: |
     - Do you have any allergies?
     - Do you have any allergies?[]{"entity": "allergy", "value": "allergies"}
-- intent: current_medication
-  examples: |
-    - Do you take any regular medications?
-    - Do you take any medicine right now?
-    - Do you take any medicine right now?[]{"entity": "medication", "value": "medicine"}[]{"entity": "current", "value": "now"}
 - intent: live
   examples: |
     - Do you live alone?
@@ -178,7 +177,7 @@ nlu:
     - Do you have any hobbies?
     - Do you have any hobbies?[]{"entity": "hobbies", "value": "hobbies"}
     - Do you have any hobbies?[]{"entity": "hobby", "value": "hobbies"}
-- intent: pets # problem
+- intent: pets
   examples: |
     - Do you have any pets?
     - Do you have any pets?[]{"entity": "pets", "value": "pets"}
@@ -191,3 +190,15 @@ nlu:
     - Is there anything in particular that's concerning you that you'd like me to address just now?
     - Do you have anything else on your mind that might be relevant for me to know?
     - Do you have any concerns that might be relevant?[]{"entity": "concerns", "value": "concerns"}
+- intent: wrong_answer
+  examples: |
+    - Your answer is wrong.
+- intent: right_answer
+  examples: |
+    - Your answer is right.
+- intent: goodbye
+  examples: |
+    - Have a good day, bye!
+    - Goodbye!
+    - Goodbye!
+

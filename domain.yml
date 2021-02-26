@@ -1,48 +1,99 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 intents:
-- past_problems
-- hobbies
-- live
-- weight_change
-- medical_conditions
-- urinate
-- injury_story
-- blood_toilet
-- breathing
-- introduction
-- recent_state
-- name_birth
-- current_medication
-- sleeping
-- bowel_bladder
-- cough
-- eating_problems
-- family_conditions
-- operations
-- pain_scale
-- pets
-- smoke
-- blood_mucus
-- daily_life
-- injury_context
-- heartburn
-- chest_pains
-- travel
-- legs
-- concerns
-- diarrhoea
-- work
-- pain_assessment
-- pain_worse
-- allergies
-- ankle
-- pain_medication
-- pain_better
-- pain_location
-- pain_description
+- goodbye:
+    use_entities: true
+- right_answer:
+    use_entities: true
+- pets:
+    use_entities: true
+- wrong_answer:
+    use_entities: true
+- hobbies:
+    use_entities: true
+- past_problems:
+    use_entities: true
+- live:
+    use_entities: true
+- weight_change:
+    use_entities: true
+- medical_conditions:
+    use_entities: true
+- urinate:
+    use_entities: true
+- injury_story:
+    use_entities: true
+- blood_toilet:
+    use_entities: true
+- breathing:
+    use_entities: true
+- introduction:
+    use_entities: true
+- recent_state:
+    use_entities: true
+- name_birth:
+    use_entities: true
+- current_medication:
+    use_entities: true
+- sleeping:
+    use_entities: true
+- bowel_bladder:
+    use_entities: true
+- cough:
+    use_entities: true
+- eating_problems:
+    use_entities: true
+- family_conditions:
+    use_entities: true
+- operations:
+    use_entities: true
+- pain_scale:
+    use_entities: true
+- smoke:
+    use_entities: true
+- blood_mucus:
+    use_entities: true
+- daily_life:
+    use_entities: true
+- injury_context:
+    use_entities: true
+- heartburn:
+    use_entities: true
+- chest_pains:
+    use_entities: true
+- travel:
+    use_entities: true
+- legs:
+    use_entities: true
+- concerns:
+    use_entities: true
+- diarrhoea:
+    use_entities: true
+- work:
+    use_entities: true
+- pain_assessment:
+    use_entities: true
+- pain_worse:
+    use_entities: true
+- allergies:
+    use_entities: true
+- ankle:
+    use_entities: true
+- pain_medication:
+    use_entities: true
+- pain_better:
+    use_entities: true
+- pain_location:
+    use_entities: true
+- pain_description:
+    use_entities: true
+- goodbye:
+    use_entities: true
 entities:
 - allergy
 - blood
@@ -58,6 +109,7 @@ entities:
 - greeting
 - hobbies
 - hobby
+- legs
 - life
 - medical history
 - medication
@@ -69,13 +121,19 @@ entities:
 - pain_worse
 - pets
 - recent
+- scale
 - toilet
 - travel
+- urine
 - weight
 - work
+slots:
+  score:
+    type: float
+    initial_value: 0
 responses:
   utter_goodbye:
-  - text: Bye!
+  - text: Have a nice day, goodbye!
   utter_affirm:
   - text: Yes!
   utter_context:
@@ -155,7 +213,23 @@ responses:
   utter_concerns:
   - text: I am really worried that I can't work because of the pain, and if I don't work I won't get paid. I already used all my savings so I really can't afford to miss work.
   - text: I am desperate to get rid of the pain and think some tests will find out what is wrong. I hope I can get an X-ray and some stronger pain killers.
+  utter_check_answer:
+  - buttons:
+    - payload: /right_answer
+      title: Yes
+    - payload: /wrong_answer
+      title: No
+    text: Is my answer right?
+  utter_report:
+  - buttons:
+    - payload: /right_answer
+      title: Report the problem
+    text: Press the button below in order to report the problem!
+  utter_print_score:
+  - text: Your total score is .
 actions:
+- utter_print_score
+- utter_goodbye
 - utter_affirm
 - utter_allergies
 - utter_ankle
@@ -163,6 +237,7 @@ actions:
 - utter_blood_toilet
 - utter_bowel_bladder
 - utter_breathing
+- utter_check_answer
 - utter_chest_pains
 - utter_concerns
 - utter_context
@@ -188,9 +263,12 @@ actions:
 - utter_pain_worse
 - utter_past_problems
 - utter_pets
+- utter_report
 - utter_sleeping
 - utter_smoke
 - utter_travel
 - utter_urinate
 - utter_weight_change
 - utter_work
+forms: {}
+e2e_actions: []
