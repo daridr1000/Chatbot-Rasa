@@ -1,0 +1,6 @@
+introduction, 1.0,Introduced yourself
+name_birth, 1.0,Asked name, dob
+injury_context, 1.0,Asked about injury
+pain_location, 1.0,Asked about the location of the pain
+pain_description, 1.0,Asked for pain description
+pain_assessment, 1.0,Asked about what makes pain better / worse
