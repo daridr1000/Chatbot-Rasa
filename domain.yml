@@ -92,8 +92,7 @@ intents:
     use_entities: true
 - pain_description:
     use_entities: true
-- goodbye:
-    use_entities: true
+    
 entities:
 - allergy
 - blood
