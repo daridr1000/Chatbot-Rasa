@@ -4,8 +4,8 @@ config:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 intents:
+- ask_score
 - goodbye:
     use_entities: true
 - right_answer:
@@ -92,7 +92,6 @@ intents:
     use_entities: true
 - pain_description:
     use_entities: true
-    
 entities:
 - allergy
 - blood
@@ -126,10 +125,7 @@ entities:
 - urine
 - weight
 - work
-slots:
-  score:
-    type: float
-    initial_value: 0
+
 responses:
   utter_goodbye:
   - text: Have a nice day, goodbye!
@@ -224,10 +220,7 @@ responses:
     - payload: /right_answer
       title: Report the problem
     text: Press the button below in order to report the problem!
-  utter_print_score:
-  - text: Your total score is .
 actions:
-- utter_print_score
 - utter_goodbye
 - utter_affirm
 - utter_allergies
@@ -269,5 +262,6 @@ actions:
 - utter_urinate
 - utter_weight_change
 - utter_work
+- action_print_score
 forms: {}
 e2e_actions: []

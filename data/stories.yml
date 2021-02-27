@@ -264,12 +264,17 @@ stories:
   steps:
   - intent: goodbye
   - action: utter_goodbye
-  - action: utter_print_score
+  - action: action_print_score
   - action: action_restart
 - story: Story from Conversation ID 14d66987882a42f2bd39c70b432d8398
   steps:
   - intent: introduction
   - intent: goodbye
   - action: utter_goodbye
-  - action: utter_print_score
+  - action: action_print_score
   - action: action_restart
+
+- story: Ask Score
+  steps:
+  - intent: ask_score
+  - action: action_print_score
