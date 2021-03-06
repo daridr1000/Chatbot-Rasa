@@ -25,6 +25,7 @@ print(EXAMPLE_SCORING_SCHEME)
 MAX_SCORE = sum(map(lambda x: x[0], EXAMPLE_SCORING_SCHEME.values()))
 SPACING = ' '
 
+
 class PrintScore(Action):
 
     def name(self) -> Text:
@@ -48,25 +49,37 @@ class PrintScore(Action):
         missed_intents = set(EXAMPLE_SCORING_SCHEME.keys()).difference(intents)
 
         output = []
+
         total_score = 0
         # loop over user intents and add the responses accordingly
         for intent in intents:
             if intent in EXAMPLE_SCORING_SCHEME:
                 current_score, explanation = EXAMPLE_SCORING_SCHEME[intent]
                 total_score += current_score
-                output.append(
-                    f"{explanation}{SPACING}({current_score}/{current_score})")
+                
+                output.append({"explanation": explanation, "scoreAchieved": current_score, "scorePossible": current_score})
+
+                # TEXTUAL OUTPUT:
+                # output.append(
+                #     f"{explanation}{SPACING}({current_score}/{current_score})")
 
         # loop over intents that the user did not trigger
 
         for intent in missed_intents:
             score, explanation = EXAMPLE_SCORING_SCHEME[intent]
-            output.append(f"{explanation}{SPACING}(0.0/{score})")
+            output.append({"explanation": explanation, "scoreAchieved": 0.0, "scorePossible": score})
+
+            # TEXTUAL OUTPUT:
+            # output.append(f"{explanation}{SPACING}(0.0/{score})")
 
         # Separator and total score
-        output.append('-' * 15)
-        output.append(f"Total score:{SPACING}({float(total_score)}/{MAX_SCORE})")
+        # TEXTUAL OUTPUT:
+        # output.append('-' * 15)
+        # output.append(
+        #     f"Total score:{SPACING}({float(total_score)}/{MAX_SCORE})")
 
-        msg = "\n".join(output)
-        dispatcher.utter_message(text=msg)
+        # msg = "\n".join(output)
+        dispatcher.utter_message(json_message={"score": {"totalScore": total_score, "totalMaxScore": MAX_SCORE, "individualScores": output}})
+        # TEXTUAL OUTPUT:
+        # dispatcher.utter_message(text=msg)
         return []
