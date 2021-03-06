@@ -1,5 +1,5 @@
 introduction, 1.0,Introduced yourself
-name_birth, 1.0,Asked name, dob
+name_birth, 1.0,Asked about the name and the date of birth
 injury_context, 1.0,Asked about injury
 pain_location, 1.0,Asked about the location of the pain
 pain_description, 1.0,Asked for pain description
