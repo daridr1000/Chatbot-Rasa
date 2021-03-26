@@ -1,5 +1,10 @@
 version: "2.0"
 stories:
+- story: greet
+  steps:
+  - intent: greetings
+  - action: utter_greetings
+  - action: utter_check_answer
 - story: introduction
   steps:
   - intent: introduction
@@ -46,9 +51,6 @@ stories:
 - story: scale
   steps:
   - intent: pain_scale
-    entities:
-    - scale: scale
-    - scale: 1 to 10
   - action: utter_pain_scale
   - action: utter_check_answer
 - story: medication
@@ -73,14 +75,9 @@ stories:
 - story: urine
   steps:
   - intent: urinate
-    entities:
-    - urine: urinating
   - action: utter_urinate
   - action: utter_check_answer
-  - intent: urinate
-    entities:
-    - urine: urinary
-  - action: utter_urinate
+
 - story: legs
   steps:
   - intent: legs
@@ -100,8 +97,6 @@ stories:
 - story: going to the toilet
   steps:
   - intent: bowel_bladder
-    entities:
-    - toilet: bowel
   - action: utter_bowel_bladder
   - action: utter_check_answer
 - story: sleeping
@@ -264,12 +259,13 @@ stories:
   steps:
   - intent: goodbye
   - action: utter_goodbye
-  - action: utter_print_score
+  - action: action_print_score
   - action: action_restart
 - story: Story from Conversation ID 14d66987882a42f2bd39c70b432d8398
   steps:
   - intent: introduction
   - intent: goodbye
   - action: utter_goodbye
-  - action: utter_print_score
+  - action: action_print_score
   - action: action_restart
+

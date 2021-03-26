@@ -1,12 +1,17 @@
 version: "2.0"
 nlu:
+- intent: greetings
+  examples: |
+    - Hello!
+    - Hi!
+    -Good morning!
 - intent: introduction
   examples: |
-    - Hello, my name is XXX. I'm one of the 5th Year Medical Students. I've been asked to find out a little bit about what has brought you here today. Would that be ok?
-    - Hello! My name is Darius. I am one of the medical students and i have been asked to find out about what has brought you here. Is it ok?
-    - Hello! I was sent to find out what has brought you here.[]{"entity": "greeting", "value": "Hello"}
-    - Hello, my name is Darius Dragnea, a 5th year Medical Student. I have been asked to find out a little bit about what has brought you here, would that be ok?
-    - Hello, my name is Darius, one of the 5th Year Medical Students. I have been asked to find out a little bit about what has brough you here today, would that be ok?
+    - My name is XXX. I'm one of the 5th Year Medical Students. I've been asked to find out a little bit about what has brought you here today. Would that be ok?
+    - My name is Darius. I am one of the medical students and i have been asked to find out about what has brought you here. Is it ok?
+    - I was sent to find out what has brought you here.[]{"entity": "greeting", "value": "Hello"}
+    - My name is Darius Dragnea, a 5th year Medical Student. I have been asked to find out a little bit about what has brought you here, would that be ok?
+    - My name is Darius, one of the 5th Year Medical Students. I have been asked to find out a little bit about what has brough you here today, would that be ok?
 - intent: name_birth
   examples: |
     - can I just confirm your name and date of birth before we start?
@@ -162,8 +167,7 @@ nlu:
     - Where do you live and who do you live with?
 - intent: work
   examples: |
-    - Do you work? If yes, what is your job?
-    - Do you work?[]{"entity": "work", "value": "work"}
+    - Do you work?If yes, what is your job?[]{"entity": "work", "value": "work"}
     - Do you have any job?[]{"entity": "work", "value": "job"}
 - intent: smoke
   examples: |
