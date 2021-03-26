@@ -6,6 +6,7 @@ from rasa_sdk.executor import CollectingDispatcher
 import csv
 import os
 
+
 EXAMPLE_SCORING_SCHEME = {
     'introduction': 0.5,
     'concerns': 0.5,
@@ -17,6 +18,7 @@ with open('./personas/1_score.csv') as file:
     EXAMPLE_SCORING_SCHEME = {}
     for row in csv.reader(file, delimiter=','):
         EXAMPLE_SCORING_SCHEME[row[0]] = (float(row[1]), row[2])
+
 
 print(EXAMPLE_SCORING_SCHEME)
 
@@ -54,9 +56,8 @@ class PrintScore(Action):
             if intent in EXAMPLE_SCORING_SCHEME:
                 current_score, explanation = EXAMPLE_SCORING_SCHEME[intent]
                 total_score += current_score
-
-                output.append(
-                    {"explanation": explanation, "scoreAchieved": current_score, "scorePossible": current_score})
+                
+                output.append({"explanation": explanation, "scoreAchieved": current_score, "scorePossible": current_score})
 
                 # TEXTUAL OUTPUT:
                 # output.append(
@@ -78,8 +79,7 @@ class PrintScore(Action):
         #     f"Total score:{SPACING}({float(total_score)}/{MAX_SCORE})")
 
         # msg = "\n".join(output)
-        dispatcher.utter_message(
-            json_message={"score": {"totalScore": total_score, "totalMaxScore": MAX_SCORE, "individualScores": output}})
+        dispatcher.utter_message(json_message={"score": {"totalScore": total_score, "totalMaxScore": MAX_SCORE, "individualScores": output}})
         # TEXTUAL OUTPUT:
         # dispatcher.utter_message(text=msg)
         return []

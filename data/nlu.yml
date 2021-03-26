@@ -205,4 +205,10 @@ nlu:
     - Have a good day, bye!
     - Goodbye!
     - Goodbye!
-
+- intent: ask_score
+  examples: |
+    - How did I do?
+    - Show me the score
+    - How did I score?
+    - score
+    
