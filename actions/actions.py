@@ -51,35 +51,26 @@ class PrintScore(Action):
         output = []
 
         total_score = 0
+
         # loop over user intents and add the responses accordingly
         for intent in intents:
             if intent in EXAMPLE_SCORING_SCHEME:
                 current_score, explanation = EXAMPLE_SCORING_SCHEME[intent]
                 total_score += current_score
-                
-                output.append({"explanation": explanation, "scoreAchieved": current_score, "scorePossible": current_score})
 
-                # TEXTUAL OUTPUT:
-                # output.append(
-                #     f"{explanation}{SPACING}({current_score}/{current_score})")
-
-        # loop over intents that the user did not trigger
+                output.append(
+                    {"explanation": explanation, "scoreAchieved": current_score, "scorePossible": current_score})
 
         for intent in missed_intents:
             score, explanation = EXAMPLE_SCORING_SCHEME[intent]
-            output.append({"explanation": explanation, "scoreAchieved": 0.0, "scorePossible": score})
+            output.append({"explanation": explanation,
+                          "scoreAchieved": 0.0, "scorePossible": score})
 
-            # TEXTUAL OUTPUT:
-            # output.append(f"{explanation}{SPACING}(0.0/{score})")
 
-        # Separator and total score
-        # TEXTUAL OUTPUT:
-        # output.append('-' * 15)
-        # output.append(
-        #     f"Total score:{SPACING}({float(total_score)}/{MAX_SCORE})")
+        # the 'data' key is required for the socketio output channel for some reason
+        msg = {"data": {"score": {"totalScore": total_score,
+                                  "totalMaxScore": MAX_SCORE, "individualScores": output}}}
 
-        # msg = "\n".join(output)
-        dispatcher.utter_message(json_message={"score": {"totalScore": total_score, "totalMaxScore": MAX_SCORE, "individualScores": output}})
-        # TEXTUAL OUTPUT:
-        # dispatcher.utter_message(text=msg)
+        dispatcher.utter_message(json_message=msg, text="Here is your score:")
+
         return []
