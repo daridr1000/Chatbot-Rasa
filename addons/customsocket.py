@@ -12,7 +12,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-   
+
 
    From: https://github.com/RasaHQ/rasa/blob/main/rasa/core/channels/socketio.py
 
@@ -56,7 +56,6 @@ class CustomSocketIOOutput(OutputChannel):
 
     async def _send_message(self, socket_id: Text, response: Any) -> None:
         """Sends a message to the recipient using the bot event."""
-
         await self.sio.emit(self.bot_message_evt, response, room=socket_id)
 
     async def send_text_message(
@@ -65,7 +64,7 @@ class CustomSocketIOOutput(OutputChannel):
         """Send a message through this channel."""
 
         for message_part in text.strip().split("\n\n"):
-            await self._send_message(recipient_id, {"text": message_part})
+            await self._send_message(recipient_id, {"text": message_part, "timestamp": kwargs["timestamp"]})
 
     async def send_image_url(
         self, recipient_id: Text, image: Text, **kwargs: Any
@@ -88,12 +87,12 @@ class CustomSocketIOOutput(OutputChannel):
         # the `or` makes sure there is at least one message we can attach the quick
         # replies to
         message_parts = text.strip().split("\n\n") or [text]
-        messages = [{"text": message, "quick_replies": []}
+        messages = [{"text": message, "buttons": []}
                     for message in message_parts]
 
         # attach all buttons to the last text fragment
         for button in buttons:
-            messages[-1]["quick_replies"].append(
+            messages[-1]["buttons"].append(
                 {
                     "content_type": "text",
                     "title": button["title"],
@@ -149,7 +148,7 @@ class CustomSocketIOInput(InputChannel):
             credentials.get("user_message_evt", "user_uttered"),
             credentials.get("bot_message_evt", "bot_uttered"),
             credentials.get("namespace"),
-            credentials.get("session_persistence", False),
+            credentials.get("session_persistence", True),
             credentials.get("socketio_path", "/socket.io"),
         )
 
@@ -158,7 +157,7 @@ class CustomSocketIOInput(InputChannel):
         user_message_evt: Text = "user_uttered",
         bot_message_evt: Text = "bot_uttered",
         namespace: Optional[Text] = None,
-        session_persistence: bool = False,
+        session_persistence: bool = True,
         socketio_path: Optional[Text] = "/socket.io",
     ):
         self.bot_message_evt = bot_message_evt
