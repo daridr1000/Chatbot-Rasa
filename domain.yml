@@ -126,7 +126,9 @@ entities:
 - urine
 - weight
 - work
-slots: {}
+slots: 
+  reports:
+    type: list
 responses:
   utter_greetings:
   - text: Hello!

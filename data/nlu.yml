@@ -4,7 +4,7 @@ nlu:
   examples: |
     - Hello!
     - Hi!
-    -Good morning!
+    - Good morning!
 - intent: introduction
   examples: |
     - My name is XXX. I'm one of the 5th Year Medical Students. I've been asked to find out a little bit about what has brought you here today. Would that be ok?
