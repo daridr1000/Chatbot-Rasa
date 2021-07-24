@@ -1,226 +1,262 @@
 version: "2.0"
 nlu:
-- intent: greetings
-  examples: |
-    - Hello!
-    - Hi!
-    - Good morning!
-- intent: introduction
-  examples: |
-    - My name is XXX. I'm one of the 5th Year Medical Students. I've been asked to find out a little bit about what has brought you here today. Would that be ok?
-    - My name is Darius. I am one of the medical students and i have been asked to find out about what has brought you here. Is it ok?
-    - I was sent to find out what has brought you here.[]{"entity": "greeting", "value": "Hello"}
-    - My name is Darius Dragnea, a 5th year Medical Student. I have been asked to find out a little bit about what has brought you here, would that be ok?
-    - My name is Darius, one of the 5th Year Medical Students. I have been asked to find out a little bit about what has brough you here today, would that be ok?
-- intent: name_birth
-  examples: |
-    - can I just confirm your name and date of birth before we start?
-    - i need your name and date of birth first
-    - You have to tell me your name and when you were born first.[]{"entity": "name", "value": "name"}[]{"entity": "date", "value": "born"}
-    - Can I confirm your name and age before starting?
-    - Wonderful! And how would you want me to call you?[]{"entity": "name", "value": "call"}
-    - Can I just confirm your name and date of birth before we start?
-    - Wonderful. And what would you like me to call you?
-    - Can I just confirm your name and age?
-- intent: injury_context
-  examples: |
-    - what has brought you here today?
-    - What has brought you here?
-    - What has brought you here today?
-- intent: injury_story
-  examples: |
-    - how did you hurt yourself?
-    - can you tell me what happened?
-    - How did you hurt yourself?
-    - Can you tell me what happened?
-- intent: pain_location
-  examples: |
-    - Where does it hurt?
-    - Where is the pain located?
-    - Where exactly does it hurt?
-    - Can you tell me a bit more about where it hurts?
-- intent: pain_description
-  examples: |
-    - can you describe the pain?
-    - does the pain travel anywhere?
-    - Could you give a description of the pain?
-    - Does the pain travel anywhere?
-- intent: pain_assessment
-  examples: |
-    - Is it a constant pain or is it getting worse?
-    - Have you found anything that makes the pain better or worse?
-- intent: current_medication
-  examples: |
-    - Are you taking any painkillers to help the pain?
-    - Do you take any regular medications?
-    - Do you take any medicine right now?
-    - Do you take any medicine right now?[]{"entity": "medication", "value": "medicine"}[]{"entity": "current", "value": "now"}
-- intent: pain_medication
-  examples: |
-    - Does your medication help with the pain?
-- intent: pain_better
-  examples: |
-    - Does anything help with the pain?
-    - Is there anything that helps with the pain?
-    - Does the pain ease when you sit or lie down?
-    - Does anything help with the pain?[]{"entity": "pain_better", "value": "help"}[]{"entity": "pain_better", "value": "pain"}
-- intent: pain_worse
-  examples: |
-    - Does anything make the pain worse?
-    - Is there anything that makes the pain worse?
-    - Does anything make the pain worse?[]{"entity": "pain_worse", "value": "worse"}
-- intent: pain_scale
-  examples: |
-    - Can you describe your pain on a scale from 1 to 10 (10 being worse pain ever)?[]{"entity": "scale", "value": "scale"}[]{"entity": "scale", "value": "1 to 10"}
-    - Can you describe the pain on a scale from 1 to 10?
-    - I would like you to rate your pain on a scale from 1 to 10.
-    - On a scale from 1 to 10, could you please rate your pain?
-- intent: urinate
-  examples: |
-    - Do you have trouble urinating?[]{"entity": "urine", "value": "urinating"}
-    - Do you have any urinary problems?[]{"entity": "urine", "value": "urinary"}
-    - Do you have trouble urinating?
-    - Are there any issues with urinating?
-- intent: legs
-  examples: |
-    - Have you noticed any weakness in your legs[]{"entity": "legs", "value": "legs"}
-    - Do you have any other symptoms with your leg?[]{"entity": "legs", "value": "leg"}
-    - Have you noticed anything wrong with your legs?
-    - Is there anything wrong with your legs?
-    - Do you have any problems with your legs?
-- intent: bowel_bladder
-  examples: |
-    - Do you have any problems with your bowel?[]{"entity": "toilet", "value": "bowel"}
-    - Do you have any problems with your bladder or bowel over the last 4 days?
-    - How often do you go to the toilet?
-    - Do you have any problems with your bowel?
-- intent: sleeping
-  examples: |
-    - Do you have any problems with sleeping?[]{"entity": "sleeping", "value": "sleeping"}
-    - Do you have any problems with sleeping?
-    - Any problems with sleeping?
-- intent: daily_life
-  examples: |
-    - Is the pain affecting your daily life?
-    - Does the pain affect your day to day life?
-    - Is your daily life being affected by the pain?[]{"entity": "day", "value": "daily"}[]{"entity": "life", "value": "life"}[]{"entity": "pain", "value": "pain"}
-- intent: blood_mucus
-  examples: |
-    - Did you cough any blood or mucus?
-    - Did you cough any blood or mucus?[]{"entity": "blood", "value": "blood"}[]{"entity": "mucus", "value": "mucus"}
-- intent: recent_state
-  examples: |
-    - Have you been well recently? any coughs, fevers, abdominal pain, headaches, any other symptoms you can't explain along with this?
-    - Have you been well recently?[]{"entity": "recent", "value": "recently"}
-- intent: cough
-  examples: |
-    - Did you cough recently?
-    - Did you cough recently?[]{"entity": "cough", "value": "cough"}
-- intent: chest_pains
-  examples: |
-    - Do you have any chest pains?
-    - Do you have any chest pains?[]{"entity": "chest pains", "value": "chest pains"}
-- intent: breathing
-  examples: |
-    - Do you have any problems breathing?
-    - Do you have any problems breathing?[]{"entity": "breathe", "value": "breathing"}
-- intent: ankle
-  examples: |
-    - Did you notice any swelling in your ankle?
-- intent: eating_problems
-  examples: |
-    - Did you have any problems with eating?
-    - Did you have any problems with eating?[]{"entity": "eat", "value": "eating"}
-- intent: weight_change
-  examples: |
-    - Did you see any change in your weight?
-    - Did you see any change in your weight?[]{"entity": "change", "value": "change"}[]{"entity": "weight", "value": "weight"}
-- intent: blood_toilet
-  examples: |
-    - Did you notice blood when going to the toilet?
-    - Did you notice blood when going to the toilet?[]{"entity": "blood", "value": "blood"}[]{"entity": "toilet", "value": "toilet"}
-- intent: heartburn
-  examples: |
-    - Did you experience any heartburn?
-    - Did you experience any heartburn?[]{"entity": "other symptoms", "value": "heartburn"}
-- intent: diarrhoea
-  examples: |
-    - Did you experience any diarrhoea?
-- intent: past_problems
-  examples: |
-    - Did you have similar problems in the past?
-    - Have you ever had problems like this before?
-    - Have you had back problems before?
-    - Did you have any similar problems in the past?
-- intent: operations
-  examples: |
-    - Have you ever had any operations?
-    - Did you have any problems with anaesthetic?
-    - Did you have any problems with you gallbladder?
-    - Have you ever had any operations?[]{"entity": "medical history", "value": "operations"}
-- intent: medical_conditions
-  examples: |
-    - Can I ask about your past medical history?
-    - Do you have any other medical conditions?
-    - Do you see a healthcare professional regularly for anything?
-    - Did you have any high blood pressure problems?
-- intent: allergies
-  examples: |
-    - Do you have any allergies?
-    - Do you have any allergies?[]{"entity": "allergy", "value": "allergies"}
-- intent: live
-  examples: |
-    - Do you live alone?
-    - Who do you live with?
-    - Where do you stay and who do you live with?
-    - Where do you currently live?
-    - Where do you live and who do you live with?
-- intent: work
-  examples: |
-    - Do you work?If yes, what is your job?[]{"entity": "work", "value": "work"}
-    - Do you have any job?[]{"entity": "work", "value": "job"}
-- intent: smoke
-  examples: |
-    - Do you smoke?
-- intent: family_conditions
-  examples: |
-    - Do any conditions run in your family?
-    - Do you have any family members you can rely on?
-- intent: hobbies
-  examples: |
-    - Do you have any hobbies?
-    - Do you have any hobbies?[]{"entity": "hobbies", "value": "hobbies"}
-    - Do you have any hobbies?[]{"entity": "hobby", "value": "hobbies"}
-- intent: pets
-  examples: |
-    - Do you have any pets?
-    - Do you have any pets?[]{"entity": "pets", "value": "pets"}
-- intent: travel
-  examples: |
-    - Any recent overseas travel recently?
-    - Any recent travels overseas?[]{"entity": "travel", "value": "travels"}
-- intent: concerns
-  examples: |
-    - Is there anything in particular that's concerning you that you'd like me to address just now?
-    - Do you have anything else on your mind that might be relevant for me to know?
-    - Do you have any concerns that might be relevant?[]{"entity": "concerns", "value": "concerns"}
-    - Is there anything else that worries you?
-    - Do you have any other medical concerns?
-- intent: wrong_answer
-  examples: |
-    - Your answer is wrong.
-- intent: right_answer
-  examples: |
-    - Your answer is right.
-- intent: goodbye
-  examples: |
-    - Have a good day, bye!
-    - Goodbye!
-    - Goodbye!
-- intent: ask_score
-  examples: |
-    - How did I do?
-    - Show me the score
-    - How did I score?
-    - score
-    
+  - intent: greetings
+    examples: |
+      - Hello!
+      - Hi!
+      - Good morning!
+
+  - intent: introduction
+    examples: |
+      - My name is XXX. I'm one of the 5th Year Medical Students. I've been asked to find out a little bit about what has brought you here today. Would that be ok?
+      - My name is Darius. I am one of the medical students and i have been asked to find out about what has brought you here. Is it ok?
+      - I was sent to find out what has brought you here.[]{"entity": "greeting", "value": "Hello"}
+      - My name is Darius Dragnea, a 5th year Medical Student. I have been asked to find out a little bit about what has brought you here, would that be ok?
+      - My name is Darius, one of the 5th Year Medical Students. I have been asked to find out a little bit about what has brough you here today, would that be ok?
+  
+  - intent: name_birth
+    examples: |
+      - can I just confirm your name and date of birth before we start?
+      - i need your name and date of birth first
+      - You have to tell me your name and when you were born first.[]{"entity": "name", "value": "name"}[]{"entity": "date", "value": "born"}
+      - Can I confirm your name and age before starting?
+      - Wonderful! And how would you want me to call you?[]{"entity": "name", "value": "call"}
+      - Can I just confirm your name and date of birth before we start?
+      - Wonderful. And what would you like me to call you?
+      - Can I just confirm your name and age?
+  
+  - intent: injury_context
+    examples: |
+      - what has brought you here today?
+      - What has brought you here?
+      - What has brought you here today?
+ 
+  - intent: injury_story
+    examples: |
+      - how did you hurt yourself?
+      - can you tell me what happened?
+      - How did you hurt yourself?
+      - Can you tell me what happened?
+  
+  - intent: pain_location
+    examples: |
+      - Where does it hurt?
+      - Where is the pain located?
+      - Where exactly does it hurt?
+      - Can you tell me a bit more about where it hurts?
+  
+  - intent: pain_description
+    examples: |
+      - can you describe the pain?
+      - does the pain travel anywhere?
+      - Could you give a description of the pain?
+      - Does the pain travel anywhere?
+  
+  - intent: pain_assessment
+    examples: |
+      - Is it a constant pain or is it getting worse?
+      - Have you found anything that makes the pain better or worse?
+  
+  - intent: current_medication
+    examples: |
+      - Are you taking any painkillers to help the pain?
+      - Do you take any regular medications?
+      - Do you take any medicine right now?
+      - Do you take any medicine right now?[]{"entity": "medication", "value": "medicine"}[]{"entity": "current", "value": "now"}
+  
+  - intent: pain_medication
+    examples: |
+      - Does your medication help with the pain?
+  
+  - intent: pain_better
+    examples: |
+      - Does anything help with the pain?
+      - Is there anything that helps with the pain?
+      - Does the pain ease when you sit or lie down?
+      - Does anything help with the pain?[]{"entity": "pain_better", "value": "help"}[]{"entity": "pain_better", "value": "pain"}
+  
+  - intent: pain_worse
+    examples: |
+      - Does anything make the pain worse?
+      - Is there anything that makes the pain worse?
+      - Does anything make the pain worse?[]{"entity": "pain_worse", "value": "worse"}
+  
+  - intent: pain_scale
+    examples: |
+      - Can you describe your pain on a scale from 1 to 10 (10 being worse pain ever)?[]{"entity": "scale", "value": "scale"}[]{"entity": "scale", "value": "1 to 10"}
+      - Can you describe the pain on a scale from 1 to 10?
+      - I would like you to rate your pain on a scale from 1 to 10.
+      - On a scale from 1 to 10, could you please rate your pain?
+  
+  - intent: urinate
+    examples: |
+      - Do you have trouble urinating?[]{"entity": "urine", "value": "urinating"}
+      - Do you have any urinary problems?[]{"entity": "urine", "value": "urinary"}
+      - Do you have trouble urinating?
+      - Are there any issues with urinating?
+  
+  - intent: legs
+    examples: |
+      - Have you noticed any weakness in your legs[]{"entity": "legs", "value": "legs"}
+      - Do you have any other symptoms with your leg?[]{"entity": "legs", "value": "leg"}
+      - Have you noticed anything wrong with your legs?
+      - Is there anything wrong with your legs?
+      - Do you have any problems with your legs?
+  
+  - intent: bowel_bladder
+    examples: |
+      - Do you have any problems with your bowel?[]{"entity": "toilet", "value": "bowel"}
+      - Do you have any problems with your bladder or bowel over the last 4 days?
+      - How often do you go to the toilet?
+      - Do you have any problems with your bowel?
+  
+  - intent: sleeping
+    examples: |
+      - Do you have any problems with sleeping?[]{"entity": "sleeping", "value": "sleeping"}
+      - Do you have any problems with sleeping?
+      - Any problems with sleeping?
+  
+  - intent: daily_life
+    examples: |
+      - Is the pain affecting your daily life?
+      - Does the pain affect your day to day life?
+      - Is your daily life being affected by the pain?[]{"entity": "day", "value": "daily"}[]{"entity": "life", "value": "life"}[]{"entity": "pain", "value": "pain"}
+  
+  - intent: blood_mucus
+    examples: |
+      - Did you cough any blood or mucus?
+      - Did you cough any blood or mucus?[]{"entity": "blood", "value": "blood"}[]{"entity": "mucus", "value": "mucus"}
+  
+  - intent: recent_state
+      examples: |
+      - Have you been well recently? any coughs, fevers, abdominal pain, headaches, any other symptoms you can't explain along with this?
+      - Have you been well recently?[]{"entity": "recent", "value": "recently"}
+  
+  - intent: cough
+    examples: |
+      - Did you cough recently?
+      - Did you cough recently?[]{"entity": "cough", "value": "cough"}
+  
+  - intent: chest_pains
+    examples: |
+      - Do you have any chest pains?
+      - Do you have any chest pains?[]{"entity": "chest pains", "value": "chest pains"}
+  
+  - intent: breathing
+    examples: |
+      - Do you have any problems breathing?
+      - Do you have any problems breathing?[]{"entity": "breathe", "value": "breathing"}
+  
+  - intent: ankle
+    examples: |
+      - Did you notice any swelling in your ankle?
+  
+  - intent: eating_problems
+    examples: |
+      - Did you have any problems with eating?
+      - Did you have any problems with eating?[]{"entity": "eat", "value": "eating"}
+  
+  - intent: weight_change
+    examples: |
+      - Did you see any change in your weight?
+      - Did you see any change in your weight?[]{"entity": "change", "value": "change"}[]{"entity": "weight", "value": "weight"}
+  
+  - intent: blood_toilet
+    examples: |
+      - Did you notice blood when going to the toilet?
+      - Did you notice blood when going to the toilet?[]{"entity": "blood", "value": "blood"}[]{"entity": "toilet", "value": "toilet"}
+  
+  - intent: heartburn
+    examples: |
+      - Did you experience any heartburn?
+      - Did you experience any heartburn?[]{"entity": "other symptoms", "value": "heartburn"}
+  
+  - intent: diarrhoea
+    examples: |
+      - Did you experience any diarrhoea?
+  
+  - intent: past_problems
+    examples: |
+      - Did you have similar problems in the past?
+      - Have you ever had problems like this before?
+      - Have you had back problems before?
+      - Did you have any similar problems in the past?
+
+  - intent: operations
+    examples: |
+      - Have you ever had any operations?
+      - Did you have any problems with anaesthetic?
+      - Did you have any problems with you gallbladder?
+      - Have you ever had any operations?[]{"entity": "medical history", "value": "operations"}
+
+  - intent: medical_conditions
+    examples: |
+      - Can I ask about your past medical history?
+      - Do you have any other medical conditions?
+      - Do you see a healthcare professional regularly for anything?
+      - Did you have any high blood pressure problems?
+
+  - intent: allergies
+    examples: |
+      - Do you have any allergies?
+      - Do you have any allergies?[]{"entity": "allergy", "value": "allergies"}
+
+  - intent: live
+    examples: |
+      - Do you live alone?
+      - Who do you live with?
+      - Where do you stay and who do you live with?
+      - Where do you currently live?
+      - Where do you live and who do you live with?
+
+  - intent: work
+    examples: |
+      - Do you work?If yes, what is your job?[]{"entity": "work", "value": "work"}
+      - Do you have any job?[]{"entity": "work", "value": "job"}
+
+  - intent: smoke
+    examples: |
+      - Do you smoke?
+
+  - intent: family_conditions
+    examples: |
+      - Do any conditions run in your family?
+      - Do you have any family members you can rely on?
+
+  - intent: hobbies
+    examples: |
+      - Do you have any hobbies?
+      - Do you have any hobbies?[]{"entity": "hobbies", "value": "hobbies"}
+      - Do you have any hobbies?[]{"entity": "hobby", "value": "hobbies"}
+
+  - intent: pets
+    examples: |
+      - Do you have any pets?
+      - Do you have any pets?[]{"entity": "pets", "value": "pets"}
+
+  - intent: travel
+    examples: |
+      - Any recent overseas travel recently?
+      - Any recent travels overseas?[]{"entity": "travel", "value": "travels"}
+
+  - intent: concerns
+    examples: |
+      - Is there anything in particular that's concerning you that you'd like me to address just now?
+      - Do you have anything else on your mind that might be relevant for me to know?
+      - Do you have any concerns that might be relevant?[]{"entity": "concerns", "value": "concerns"}
+      - Is there anything else that worries you?
+      - Do you have any other medical concerns?
+
+  - intent: wrong_answer
+    examples: |
+      - Your answer is wrong.
+
+  - intent: right_answer
+    examples: |
+      - Your answer is right.
+
+  - intent: goodbye
+    examples: |
+      - Have a good day, bye!
+      - Goodbye!
+      - Goodbye!

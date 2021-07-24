@@ -1,271 +1,247 @@
-version: '2.0'
+version: "2.0"
 config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greetings:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- right_answer:
-    use_entities: true
-- pets:
-    use_entities: true
-- wrong_answer:
-    use_entities: true
-- hobbies:
-    use_entities: true
-- past_problems:
-    use_entities: true
-- live:
-    use_entities: true
-- weight_change:
-    use_entities: true
-- medical_conditions:
-    use_entities: true
-- urinate:
-    use_entities: true
-- injury_story:
-    use_entities: true
-- blood_toilet:
-    use_entities: true
-- breathing:
-    use_entities: true
-- introduction:
-    use_entities: true
-- recent_state:
-    use_entities: true
-- name_birth:
-    use_entities: true
-- current_medication:
-    use_entities: true
-- sleeping:
-    use_entities: true
-- bowel_bladder:
-    use_entities: true
-- cough:
-    use_entities: true
-- eating_problems:
-    use_entities: true
-- family_conditions:
-    use_entities: true
-- operations:
-    use_entities: true
-- pain_scale:
-    use_entities: true
-- smoke:
-    use_entities: true
-- blood_mucus:
-    use_entities: true
-- daily_life:
-    use_entities: true
-- injury_context:
-    use_entities: true
-- heartburn:
-    use_entities: true
-- chest_pains:
-    use_entities: true
-- travel:
-    use_entities: true
-- legs:
-    use_entities: true
-- concerns:
-    use_entities: true
-- diarrhoea:
-    use_entities: true
-- work:
-    use_entities: true
-- pain_assessment:
-    use_entities: true
-- pain_worse:
-    use_entities: true
-- allergies:
-    use_entities: true
-- ankle:
-    use_entities: true
-- pain_medication:
-    use_entities: true
-- pain_better:
-    use_entities: true
-- pain_location:
-    use_entities: true
-- pain_description:
-    use_entities: true
-entities:
-- allergy
-- blood
-- breathe
-- change
-- chest pains
-- concerns
-- cough
-- current
-- date
-- day
-- eat
-- greeting
-- hobbies
-- hobby
-- legs
-- life
-- medical history
-- medication
-- mucus
-- name
-- other symptoms
-- pain
-- pain_better
-- pain_worse
-- pets
-- recent
-- scale
-- toilet
-- travel
-- urine
-- weight
-- work
-slots: 
+  - greetings:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - end_conversation:
+      use_entities: true
+  - no_end_conversation:
+      use_entities: true
+
+  - right_answer:
+      use_entities: true
+  - pets:
+      use_entities: true
+  - wrong_answer:
+      use_entities: true
+  - hobbies:
+      use_entities: true
+  - past_problems:
+      use_entities: true
+  - live:
+      use_entities: true
+  - weight_change:
+      use_entities: true
+  - medical_conditions:
+      use_entities: true
+  - urinate:
+      use_entities: true
+  - injury_story:
+      use_entities: true
+  - blood_toilet:
+      use_entities: true
+  - breathing:
+      use_entities: true
+  - introduction:
+      use_entities: true
+  - recent_state:
+      use_entities: true
+  - name_birth:
+      use_entities: true
+  - current_medication:
+      use_entities: true
+  - sleeping:
+      use_entities: true
+  - bowel_bladder:
+      use_entities: true
+  - cough:
+      use_entities: true
+  - eating_problems:
+      use_entities: true
+  - family_conditions:
+      use_entities: true
+  - operations:
+      use_entities: true
+  - pain_scale:
+      use_entities: true
+  - smoke:
+      use_entities: true
+  - blood_mucus:
+      use_entities: true
+  - daily_life:
+      use_entities: true
+  - injury_context:
+      use_entities: true
+  - heartburn:
+      use_entities: true
+  - chest_pains:
+      use_entities: true
+  - travel:
+      use_entities: true
+  - legs:
+      use_entities: true
+  - concerns:
+      use_entities: true
+  - diarrhoea:
+      use_entities: true
+  - work:
+      use_entities: true
+  - pain_assessment:
+      use_entities: true
+  - pain_worse:
+      use_entities: true
+  - allergies:
+      use_entities: true
+  - ankle:
+      use_entities: true
+  - pain_medication:
+      use_entities: true
+  - pain_better:
+      use_entities: true
+  - pain_location:
+      use_entities: true
+  - pain_description:
+      use_entities: true
+
+slots:
   reports:
     type: list
 responses:
+  # General
   utter_greetings:
-  - text: Hello!
+    - text: Hello!
   utter_goodbye:
-  - text: Have a nice day, goodbye!
+    - text: Have a nice day, goodbye!
   utter_affirm:
-  - text: Yes!
+    - text: Yes!
+
+  # History
   utter_context:
-  - text: My back hurts.
+    - text: My back hurts.
   utter_name:
-  - text: My name is William MacKay and I am 62.
+    - text: My name is William MacKay and I am 62.
   utter_injury_story:
-  - text: The back pain came on suddenly after I lifted a heavy bag of bark for my garden, out of the car boot 4 days ago. I dropped the bag of bark on the ground and had to go inside to ask my son to come and help me. I did not fall during this incident.
+    - text: The back pain came on suddenly after I lifted a heavy bag of bark for my garden, out of the car boot 4 days ago. I dropped the bag of bark on the ground and had to go inside to ask my son to come and help me. I did not fall during this incident.
   utter_pain_location:
-  - text: The pain is in left lower back region.
+    - text: The pain is in left lower back region.
   utter_pain_description:
-  - text: I have had occasional shooting with severe pain going down the back of my left leg. This happens more if I am sitting down.
+    - text: I have had occasional shooting with severe pain going down the back of my left leg. This happens more if I am sitting down.
   utter_pain_assessment:
-  - text: It’s a constant pain all the time but occasionally gets worse. I would say it is worse in the morning but usually improves within 20 minutes after getting out of bed.
+    - text: It’s a constant pain all the time but occasionally gets worse. I would say it is worse in the morning but usually improves within 20 minutes after getting out of bed.
   utter_pain_medication:
-  - text: Nurofen and Paracetamol tablets helped initially but not so much now
+    - text: Nurofen and Paracetamol tablets helped initially but not so much now
   utter_pain_better:
-  - text: The leg pain eases if I am lying flat on my back or when I am standing.
+    - text: The leg pain eases if I am lying flat on my back or when I am standing.
   utter_pain_worse:
-  - text: Sitting down too long, bending down, or lifting anything
+    - text: Sitting down too long, bending down, or lifting anything
   utter_pain_scale:
-  - text: I would say that the pain severity is 6/10, going up to 8/10 when bad.
+    - text: I would say that the pain severity is 6/10, going up to 8/10 when bad.
   utter_legs:
-  - text: I have not noticed any leg weakness but over the last week I have had some pins and needles affecting the outer border of my left foot. I only have this left leg pain when I am sitting down
+    - text: I have not noticed any leg weakness but over the last week I have had some pins and needles affecting the outer border of my left foot. I only have this left leg pain when I am sitting down
   utter_urinate:
-  - text: I do not have any urinary problems.
+    - text: I do not have any urinary problems.
   utter_bowel_bladder:
-  - text: I did not notice any change, I have a normal bowel movement once a day.
+    - text: I did not notice any change, I have a normal bowel movement once a day.
   utter_sleeping:
-  - text: My partner made an appointment with the GP because the pain has been affecting my sleep and I have been off work since it happened.
+    - text: My partner made an appointment with the GP because the pain has been affecting my sleep and I have been off work since it happened.
   utter_daily_life:
-  - text: My partner and son have been helping me around the house.
+    - text: My partner and son have been helping me around the house.
   utter_blood_mucus:
-  - text: I do not cough any mucus up and have not coughed any blood up.
+    - text: I do not cough any mucus up and have not coughed any blood up.
   utter_cough:
-  - text: I have had a cough, but it is no worse than usual and I think it is because of my smoking
+    - text: I have had a cough, but it is no worse than usual and I think it is because of my smoking
   utter_chest_pains:
-  - text: I have not have any chest pains or palpitations.
+    - text: I have not have any chest pains or palpitations.
   utter_breathing:
-  - text: I have not have any wheeze or noticed any breathlessness when lying flat. However, I do get breathless if I am walking upstairs or up an incline, but this has been the same for years.
+    - text: I have not have any wheeze or noticed any breathlessness when lying flat. However, I do get breathless if I am walking upstairs or up an incline, but this has been the same for years.
   utter_ankle:
-  - text: I have not noticed any ankle swelling.
+    - text: I have not noticed any ankle swelling.
   utter_eating_problems:
-  - text: I have been eating and drinking as normal. I am swallowing normally.
+    - text: I have been eating and drinking as normal. I am swallowing normally.
   utter_weight_change:
-  - text: My weight has not changed for years
+    - text: My weight has not changed for years
   utter_blood_toilet:
-  - text: I have not noticed blood from my back passage.
+    - text: I have not noticed blood from my back passage.
   utter_heartburn:
-  - text: I have had some heartburn (acid burning feeling) after taking the Nurofen
+    - text: I have had some heartburn (acid burning feeling) after taking the Nurofen
   utter_diarrhoea:
-  - text: I have not noticed any black diarrhoea.
+    - text: I have not noticed any black diarrhoea.
   utter_past_problems:
-  - text: I had an episode of back pain 5 years ago after a car accident and this cleared up with time and physio. I did not have any leg pain during that episode.
+    - text: I had an episode of back pain 5 years ago after a car accident and this cleared up with time and physio. I did not have any leg pain during that episode.
   utter_operations:
-  - text: I had my gallbladder removed 10 years ago for gallstones. No problems with the anaesthetic.
+    - text: I had my gallbladder removed 10 years ago for gallstones. No problems with the anaesthetic.
   utter_medical_conditions:
-  - text: I had high blood pressure diagnosed 10 years ago when I had my gallbladder problems. I see the nurse once a year for a check-up including blood tests.
+    - text: I had high blood pressure diagnosed 10 years ago when I had my gallbladder problems. I see the nurse once a year for a check-up including blood tests.
   utter_allergies:
-  - text: I do not have any allergies
+    - text: I do not have any allergies
   utter_current_medication:
-  - text: Ramipril 1 tablet once daily for my high blood pressure. I also took Nurofen 1 tablet 3 times daily for the last 3 weeks. I bought this over the counter. Paracetamol (2 tablets/ 3 times daily) helps my back but not the leg pain.
+    - text: Ramipril 1 tablet once daily for my high blood pressure. I also took Nurofen 1 tablet 3 times daily for the last 3 weeks. I bought this over the counter. Paracetamol (2 tablets/ 3 times daily) helps my back but not the leg pain.
   utter_live:
-  - text: I live in Balmedie with my partner and son. The house is a 2-storey semidetached house which has stairs
+    - text: I live in Balmedie with my partner and son. The house is a 2-storey semidetached house which has stairs
   utter_work:
-  - text: I am a self-employed cleaner, I work 7 days a week. My work involves cleaning machines and lots of bending down.
+    - text: I am a self-employed cleaner, I work 7 days a week. My work involves cleaning machines and lots of bending down.
   utter_smoke:
-  - text: I smoke 20 cigarettes per day since I was 15 years. I tried to stop 10 years ago when I was informed I had high blood pressure but nothing worked. I do not want to try anymore. I do not drink alcohol or take any recreational drugs.
+    - text: I smoke 20 cigarettes per day since I was 15 years. I tried to stop 10 years ago when I was informed I had high blood pressure but nothing worked. I do not want to try anymore. I do not drink alcohol or take any recreational drugs.
   utter_family_conditions:
-  - text: My mother died 10 years ago of a stroke at the age of 75. My father is 88 years old and is currently living in a nursing home. I do not have no siblings. I have a 35year old son, John, who lives with me. My partner has 2 adult daughters, Mary and Jean who live near Inverness.
+    - text: My mother died 10 years ago of a stroke at the age of 75. My father is 88 years old and is currently living in a nursing home. I do not have no siblings. I have a 35year old son, John, who lives with me. My partner has 2 adult daughters, Mary and Jean who live near Inverness.
   utter_hobbies:
-  - text: I work many hours so I don’t have time for leisure or activities.
+    - text: I work many hours so I don’t have time for leisure or activities.
   utter_pets:
-  - text: No, I do not have any pets.
+    - text: No, I do not have any pets.
   utter_travel:
-  - text: No, I do not have time with my job.
+    - text: No, I do not have time with my job.
   utter_concerns:
-  - text: I am really worried that I can't work because of the pain, and if I don't work I won't get paid. I already used all my savings so I really can't afford to miss work.
-  - text: I am desperate to get rid of the pain and think some tests will find out what is wrong. I hope I can get an X-ray and some stronger pain killers.
-  utter_check_answer:
-  - buttons:
-    - payload: /right_answer
-      title: Yes
-    - payload: /wrong_answer
-      title: No
-    text: Is my answer right?
-  utter_report:
-  - buttons:
-    - payload: /right_answer
-      title: Report the problem
-    text: Press the button below in order to report the problem!
+    - text: I am really worried that I can't work because of the pain, and if I don't work I won't get paid. I already used all my savings so I really can't afford to miss work.
+    - text: I am desperate to get rid of the pain and think some tests will find out what is wrong. I hope I can get an X-ray and some stronger pain killers.
+
+  utter_ask_end_conversation:
+    - buttons:
+        - payload: /end_conversation
+          title: "Yes"
+        - payload: /no_end_conversation
+          title: "No"
+      text: Do you want to end the conversation?
+
+  utter_no_end_conversation:
+    - text: Please continue
+
 actions:
-- utter_goodbye
-- utter_affirm
-- utter_allergies
-- utter_ankle
-- utter_blood_mucus
-- utter_blood_toilet
-- utter_bowel_bladder
-- utter_breathing
-- utter_check_answer
-- utter_chest_pains
-- utter_concerns
-- utter_context
-- utter_cough
-- utter_current_medication
-- utter_daily_life
-- utter_diarrhoea
-- utter_eating_problems
-- utter_family_conditions
-- utter_heartburn
-- utter_hobbies
-- utter_injury_story
-- utter_legs
-- utter_live
-- utter_medical_conditions
-- utter_name
-- utter_operations
-- utter_pain_assessment
-- utter_pain_better
-- utter_pain_medication
-- utter_pain_scale
-- utter_pain_worse
-- utter_past_problems
-- utter_pets
-- utter_report
-- utter_sleeping
-- utter_smoke
-- utter_travel
-- utter_urinate
-- utter_weight_change
-- utter_work
-- action_print_score
+  - utter_goodbye
+  - utter_affirm
+  - utter_allergies
+  - utter_ankle
+  - utter_blood_mucus
+  - utter_blood_toilet
+  - utter_bowel_bladder
+  - utter_breathing
+  - utter_chest_pains
+  - utter_concerns
+  - utter_context
+  - utter_cough
+  - utter_current_medication
+  - utter_daily_life
+  - utter_diarrhoea
+  - utter_eating_problems
+  - utter_family_conditions
+  - utter_heartburn
+  - utter_hobbies
+  - utter_injury_story
+  - utter_legs
+  - utter_live
+  - utter_medical_conditions
+  - utter_name
+  - utter_operations
+  - utter_pain_assessment
+  - utter_pain_better
+  - utter_pain_medication
+  - utter_pain_scale
+  - utter_pain_worse
+  - utter_past_problems
+  - utter_pets
+  - utter_sleeping
+  - utter_smoke
+  - utter_travel
+  - utter_urinate
+  - utter_weight_change
+  - utter_work
+  - utter_ask_end_conversation
+  - utter_no_end_conversation
+  - action_print_score
 forms: {}
 e2e_actions: []

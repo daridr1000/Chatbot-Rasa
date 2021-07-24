@@ -1,5 +1,12 @@
 version: "2.0"
 
 rules:
-
-
+  - rule: End conversation on end_conversation
+    steps:
+      - intent: end_conversation
+      - action: action_print_score
+      - action: action_restart
+  - rule: Reply when conversation is not ended
+    steps:
+      - intent: no_end_conversation
+      - action: utter _no_end_conversation

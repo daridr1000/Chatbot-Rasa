@@ -1,273 +1,238 @@
 version: "2.0"
 stories:
-- story: greet
-  steps:
-  - intent: greetings
-  - action: utter_greetings
-  # - action: utter_check_answer
-- story: introduction
-  steps:
-  - intent: introduction
-  - action: utter_affirm
-  # - action: utter_check_answer
-- story: injury
-  steps:
-  - intent: injury_context
-  - action: utter_context
-  # - action: utter_check_answer
-- story: name
-  steps:
-  - intent: name_birth
-  - action: utter_name
-  # - action: utter_check_answer
-  - intent: name_birth
-  - action: utter_name
-- story: injury_story
-  steps:
-  - intent: injury_story
-  - action: utter_injury_story
-  # - action: utter_check_answer
-  - intent: injury_story
-  - action: utter_injury_story
-- story: pain_location
-  steps:
-  - intent: pain_location
-  - action: utter_pain_location
-  # - action: utter_check_answer
-- story: description
-  steps:
-  - intent: pain_description
-  - action: utter_pain_description
-  # - action: utter_check_answer
-  - intent: pain_description
-  - action: utter_pain_description
-- story: assessment
-  steps:
-  - intent: pain_assessment
-  - action: utter_pain_assessment
-  # - action: utter_check_answer
-  - intent: pain_assessment
-  - action: utter_pain_assessment
-- story: scale
-  steps:
-  - intent: pain_scale
-  - action: utter_pain_scale
-  # - action: utter_check_answer
-- story: medication
-  steps:
-  - intent: pain_medication
-  - action: utter_pain_medication
-  - intent: pain_medication
-  - action: utter_pain_medication
-  # - action: utter_check_answer
-- story: pain_better
-  steps:
-  - intent: pain_better
-  - action: utter_pain_better
-  # - action: utter_check_answer
-  - intent: pain_better
-  - action: utter_pain_better
-- story: pain_worse
-  steps:
-  - intent: pain_worse
-  - action: utter_pain_worse
-  # - action: utter_check_answer
-- story: urine
-  steps:
-  - intent: urinate
-  - action: utter_urinate
-  # - action: utter_check_answer
+  - story: greet
+    steps:
+      - intent: greetings
+      - action: utter_greetings
 
-- story: legs
-  steps:
-  - intent: legs
-    entities:
-    - legs: legs
-  - action: utter_legs
-  # - action: utter_check_answer
-  - intent: legs
-    entities:
-    - legs: leg
-  - action: utter_legs
-- story: legs problems
-  steps:
-  - intent: legs
-  - action: utter_legs
-  # - action: utter_check_answer
-- story: going to the toilet
-  steps:
-  - intent: bowel_bladder
-  - action: utter_bowel_bladder
-  # - action: utter_check_answer
-- story: sleeping
-  steps:
-  - intent: sleeping
-  - action: utter_sleeping
-  # - action: utter_check_answer
-- story: daily_life
-  steps:
-  - intent: daily_life
-  - action: utter_daily_life
-  # - action: utter_check_answer
-- story: blood_mucus
-  steps:
-  - intent: blood_mucus
-  - action: utter_blood_mucus
-  # - action: utter_check_answer
-- story: recent_state
-  steps:
-  - intent: recent_state
-  - action: utter_cough
-  - action: utter_chest_pains
-  - action: utter_breathing
-  # - action: utter_check_answer
-- story: cough
-  steps:
-  - intent: cough
-  - action: utter_cough
-  # - action: utter_check_answer
-- story: chest pains
-  steps:
-  - intent: chest_pains
-  - action: utter_chest_pains
-  # - action: utter_check_answer
-- story: breathing
-  steps:
-  - intent: breathing
-  - action: utter_breathing
-  # - action: utter_check_answer
-- story: interactive_story_1
-  steps:
-  - intent: breathing
-    entities:
-    - breathe: breathing
-  - action: utter_breathing
-  # - action: utter_check_answer
-- story: ankle swelling
-  steps:
-  - intent: ankle
-  - action: utter_ankle
-  # - action: utter_check_answer
-- story: eating problems
-  steps:
-  - intent: eating_problems
-  - action: utter_eating_problems
-  # - action: utter_check_answer
-- story: weight change
-  steps:
-  - intent: weight_change
-  - action: utter_weight_change
-  # - action: utter_check_answer
-- story: blood toilet
-  steps:
-  - intent: blood_toilet
-  - action: utter_blood_toilet
-  # - action: utter_check_answer
-- story: heartburn
-  steps:
-  - intent: heartburn
-  - action: utter_heartburn
-  # - action: utter_check_answer
-- story: diarrhoea
-  steps:
-  - intent: diarrhoea
-  - action: utter_diarrhoea
-  # - action: utter_check_answer
-- story: past_problems
-  steps:
-  - intent: past_problems
-  - action: utter_past_problems
-  # - action: utter_check_answer
-- story: operations
-  steps:
-  - intent: operations
-  - action: utter_operations
-  # - action: utter_check_answer
-- story: medical_conditions
-  steps:
-  - intent: medical_conditions
-  - action: utter_medical_conditions
-  # - action: utter_check_answer
-- story: allergies
-  steps:
-  - intent: allergies
-  - action: utter_allergies
-  # - action: utter_check_answer
-- story: current_medication
-  steps:
-  - intent: current_medication
-  - action: utter_current_medication
-  # - action: utter_check_answer
-- story: live
-  steps:
-  - intent: live
-  - action: utter_live
-  # - action: utter_check_answer
-- story: work
-  steps:
-  - intent: work
-  - action: utter_work
-  # - action: utter_check_answer
-- story: smoke
-  steps:
-  - intent: smoke
-  - action: utter_smoke
-  # - action: utter_check_answer
-- story: family_conditions
-  steps:
-  - intent: family_conditions
-  - action: utter_family_conditions
-  # - action: utter_check_answer
-# - story: right answer
-#   steps:
-#   - intent: right_answer
-# - story: wrong answer
-#   steps:
-#   - intent: wrong_answer
-#   - action: utter_report
-- story: hobbies
-  steps:
-  - intent: hobbies
-  - action: utter_hobbies
-  # - action: utter_check_answer
-- story: pets
-  steps:
-  - intent: pets
-  # - action: utter_check_answer
-- story: travel
-  steps:
-  - intent: travel
-  - action: utter_travel
-  # - action: utter_check_answer
-- story: concerns
-  steps:
-  - intent: concerns
-  - action: utter_concerns
-  # - action: utter_check_answer
-- story: interactive_story_1
-  steps:
-  - intent: pets
-  - action: utter_pets
-  # - action: utter_check_answer
-  - intent: hobbies
-  - action: utter_hobbies
-  # - action: utter_check_answer
-  # - intent: wrong_answer
-  # - action: utter_report
-  # - intent: right_answer
+  - story: introduction
+    steps:
+      - intent: introduction
+      - action: utter_affirm
 
-- story: goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-  - action: action_print_score
-  - action: action_restart
+  - story: injury
+    steps:
+      - intent: injury_context
+      - action: utter_context
+  - story: name
+    steps:
+      - intent: name_birth
+      - action: utter_name
+      - intent: name_birth
+      - action: utter_name
+  - story: injury_story
+    steps:
+      - intent: injury_story
+      - action: utter_injury_story
+      - intent: injury_story
+      - action: utter_injury_story
+  - story: pain_location
+    steps:
+      - intent: pain_location
+      - action: utter_pain_location
 
-- story: Story from Conversation ID 14d66987882a42f2bd39c70b432d8398
-  steps:
-  - intent: introduction
-  - intent: goodbye
-  - action: utter_goodbye
-  - action: action_print_score
-  - action: action_restart
+  - story: description
+    steps:
+      - intent: pain_description
+      - action: utter_pain_description
+      - intent: pain_description
+      - action: utter_pain_description
 
+  - story: assessment
+    steps:
+      - intent: pain_assessment
+      - action: utter_pain_assessment
+      - intent: pain_assessment
+      - action: utter_pain_assessment
+
+  - story: scale
+    steps:
+      - intent: pain_scale
+      - action: utter_pain_scale
+
+  - story: medication
+    steps:
+      - intent: pain_medication
+      - action: utter_pain_medication
+      - intent: pain_medication
+      - action: utter_pain_medication
+
+  - story: pain_better
+    steps:
+      - intent: pain_better
+      - action: utter_pain_better
+      - intent: pain_better
+      - action: utter_pain_better
+
+  - story: pain_worse
+    steps:
+      - intent: pain_worse
+      - action: utter_pain_worse
+
+  - story: urine
+    steps:
+      - intent: urinate
+      - action: utter_urinate
+
+  - story: legs
+    steps:
+      - intent: legs
+
+      - action: utter_legs
+      - intent: legs
+      - action: utter_legs
+
+  - story: legs problems
+    steps:
+      - intent: legs
+      - action: utter_legs
+
+  - story: going to the toilet
+    steps:
+      - intent: bowel_bladder
+      - action: utter_bowel_bladder
+
+  - story: sleeping
+    steps:
+      - intent: sleeping
+      - action: utter_sleeping
+
+  - story: daily_life
+    steps:
+      - intent: daily_life
+      - action: utter_daily_life
+
+  - story: blood_mucus
+    steps:
+      - intent: blood_mucus
+      - action: utter_blood_mucus
+
+  - story: recent_state
+    steps:
+      - intent: recent_state
+      - action: utter_cough
+      - action: utter_chest_pains
+      - action: utter_breathing
+
+  - story: cough
+    steps:
+      - intent: cough
+      - action: utter_cough
+
+  - story: chest pains
+    steps:
+      - intent: chest_pains
+      - action: utter_chest_pains
+
+  - story: breathing
+    steps:
+      - intent: breathing
+      - action: utter_breathing
+
+  - story: ankle swelling
+    steps:
+      - intent: ankle
+      - action: utter_ankle
+
+  - story: eating problems
+    steps:
+      - intent: eating_problems
+      - action: utter_eating_problems
+
+  - story: weight change
+    steps:
+      - intent: weight_change
+      - action: utter_weight_change
+
+  - story: blood toilet
+    steps:
+      - intent: blood_toilet
+      - action: utter_blood_toilet
+
+  - story: heartburn
+    steps:
+      - intent: heartburn
+      - action: utter_heartburn
+
+  - story: diarrhoea
+    steps:
+      - intent: diarrhoea
+      - action: utter_diarrhoea
+
+  - story: past_problems
+    steps:
+      - intent: past_problems
+      - action: utter_past_problems
+
+  - story: operations
+    steps:
+      - intent: operations
+      - action: utter_operations
+
+  - story: medical_conditions
+    steps:
+      - intent: medical_conditions
+      - action: utter_medical_conditions
+
+  - story: allergies
+    steps:
+      - intent: allergies
+      - action: utter_allergies
+
+  - story: current_medication
+    steps:
+      - intent: current_medication
+      - action: utter_current_medication
+
+  - story: live
+    steps:
+      - intent: live
+      - action: utter_live
+
+  - story: work
+    steps:
+      - intent: work
+      - action: utter_work
+
+  - story: smoke
+    steps:
+      - intent: smoke
+      - action: utter_smoke
+
+  - story: family_conditions
+    steps:
+      - intent: family_conditions
+      - action: utter_family_conditions
+
+  - story: hobbies
+    steps:
+      - intent: hobbies
+      - action: utter_hobbies
+
+  - story: pets
+    steps:
+      - intent: pets
+      - action: utter_pets
+
+  - story: travel
+    steps:
+      - intent: travel
+      - action: utter_travel
+
+  - story: concerns
+    steps:
+      - intent: concerns
+      - action: utter_concerns
+
+  - story: interactive_story_1
+    steps:
+      - intent: pets
+      - action: utter_pets
+      - intent: hobbies
+      - action: utter_hobbies
+
+  - story: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+      - action: utter_ask_end_conversation
